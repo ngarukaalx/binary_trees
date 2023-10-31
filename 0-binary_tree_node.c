@@ -16,14 +16,14 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 	newnode = malloc(sizeof(struct binary_tree_s));
 	if (newnode == NULL)
 		return (NULL);
-	newnode->data = value;
+	newnode->n = value;
 	newnode->parent = parent;
 
 	newnode->left = NULL;
 	newnode->right = NULL;
 	if (parent != NULL)
 	{
-		if (value < parent->data)
+		if (value < parent->n)
 		{
 			parent->left = newnode;
 		}
