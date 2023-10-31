@@ -9,7 +9,7 @@
  * or if parent is NULL
  */
 
-binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
+binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 {
 	binary_tree_t *newnode;
 
@@ -23,12 +23,12 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 
 	newnode->left = NULL;
 	newnode->right = NULL;
-	if (parent->left != NULL)
+	if (parent->right != NULL)
 	{
-		newnode->left = parent->left;
-		newnode->left->parent = newnode;
+		newnode->right = parent->right;
+		newnode->right->parent = newnode;
 	}
-	parent->left = newnode;
+	parent->right = newnode;
 
 	return (newnode);
 
